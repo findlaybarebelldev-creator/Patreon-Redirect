@@ -3,16 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Redirecting...</title>
+
 <script>
 const params = new URLSearchParams(window.location.search);
+
 const code = params.get("code");
+const state = params.get("state");
 
 if (code) {
-    window.location.href = "FindlayBarbell://oauth-callback/patreon?code=" + code;
+    window.location.href =
+        "FindlayBarbell://oauth-callback/patreon?code=" +
+        code +
+        "&state=" +
+        state;
 } else {
     document.body.innerHTML = "No Patreon code received.";
 }
 </script>
+
 </head>
 <body>
 Redirecting back to the app...
