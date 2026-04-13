@@ -2,16 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patreon Code</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Patreon Login Successful!</h2>
+   <div class="container">
+    <h2>Patreon Login Successful!</h2>
 
-  <p>Copy the code below and paste it into the app:</p>
+    <p>Copy the code below and paste it into the app:</p>
 
-  <input type="text" id="patreonCode" style="width: 100%;" readonly>
-  <button id="copyButton">Copy to Clipboard</button>
-  <button onclick="alert('Copy the code from the URL manually if empty')">Get Code</button>
+    <input type="text" id="patreonCode" style="width: 100%;" readonly>
+
+    <div class="button-group">
+      <button id="copyButton">Copy to Clipboard</button>
+      <button onclick="alert('Copy the code from the URL manually if empty')">Get Code</button>
+    </div>
+  </div>
   
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -28,7 +35,7 @@
       });
 
     } else {
-      document.body.innerHTML = "No Patreon code received.";
+      document.body.innerHTML = '<div class="container"><div class="error-message">No Patreon code received.</div></div>';
     }
   </script>
 </body>
